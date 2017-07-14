@@ -17,7 +17,7 @@
   var splitName = document.getElementById("splitName");
 splitName.onclick = function(){
 
-               var fullname = document.getElementById("fullName").value;
+               var fullname = document.getElementById("fullName").value.trim();
 
                /*
                 *  We've gotten the fullname from the HTML form field.
@@ -35,8 +35,13 @@ splitName.onclick = function(){
                 *
                 **/
 
-               var firstname = 'Placeholder first name';
-               var lastname = 'Placeholder last name';
+               var firstname = fullname.substring(0, fullname.indexOf(' '));
+
+               if (fullname.split(' ').length > 1) {
+                 var lastname = fullname.substring(fullname.indexOf(' '));
+               } else {
+                 var lastname = '';
+               }
 
 
                document.getElementById("firstname").innerHTML = firstname;
