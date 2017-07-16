@@ -49,18 +49,21 @@
  *            @output {array} - the bitmap data array to which the output image is written.
  *
  **/
-function makeBlue(original, output){
-      // YOUR CODE GOES HERE
-      for (var i=0; i<original.length; i++){
-	output[i] = original[i];
-} 
+function makeBlue(original, output) {
+  for (var i = 0; i < original.length; i++) {
+    var blues = i % 4 === 2;
+    var alphas = i % 4 === 3;
 
+    if (blues || alphas) {
+      output[i] = original[i];
+    }
+  }
 }
 
 /*
  * makeReverse - Reads data from an image bitmap array and writes new image data to another array object
  *               The output data contains pixel data inverted, with every color value its opposite on the scale of 0-255.
- *               To get "inverted" color, the value for each color will be 255-n, where n is the originalx` color.
+ *               To get "inverted" color, the value for each color will be 255-n, where n is the original color.
  *               Don't invert the alpha value - that's opacity, and if you invert it, your picture will be trasparent (invisible!)
  *
  *            @original {array} - the source bitmap data, an array of integers from 0-255
@@ -69,8 +72,13 @@ function makeBlue(original, output){
  *            @output {array} - the bitmap data array to which the output image is written.
  *
  **/
-function makeReverse(original, output){
-      // YOUR CODE GOES HERE
+function makeReverse(original, output) {
+  // for (var i = 0; i < original.length; i++) {
+  //   if (i % 4 !== 3) {
+  //     var inverted = 255 - i;
+  //     output[i] = original[inverted];
+  //   }
+  // }
 }
 
 /*
@@ -85,8 +93,21 @@ function makeReverse(original, output){
  *
  **/
 
-function makeTransparent(original,output){
-      // YOUR CODE GOES HERE
+function makeTransparent(original, output) {
+  // var duplicate = original;
+  // var half = (original.length / 2);
+  // var first_half = original.splice(0, half);
+  // var second_half = duplicate.splice(0, half);
+  // var withNoAlphas = [];
+  //
+  // for (var i = 0; i < half; i++) {
+  //   if (first_half[i] % 4 !== 0) {
+  //     withNoAlphas.push(first_half[i]);
+  //   }
+  // }
+  //
+  // withNoAlphas.concat(second_half);
+  // output[i] = withNoAlphas[i];
 }
 
 /*

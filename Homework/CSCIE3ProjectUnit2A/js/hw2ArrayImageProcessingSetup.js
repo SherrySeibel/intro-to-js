@@ -16,7 +16,7 @@
   * IN THIS FILE AND SHOULD NOT MAKE ANY CHANGES HERE.
   *
   * YOU AREN'T EXPECTED TO UNDERSTAND THIS CODE,
-  * THOUGH BY WEEK 14 WE WILL HAVE COVERED A LOT OF THIS. 
+  * THOUGH BY WEEK 14 WE WILL HAVE COVERED A LOT OF THIS.
   *
   ********************************************************************/
 
